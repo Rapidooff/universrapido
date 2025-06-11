@@ -7,36 +7,36 @@ window.addEventListener("DOMContentLoaded", () => {
   
   // Formulaire contact AJAX + confirmation
   const form = document.getElementById('contact-form');
-  const confirmation = document.getElementById('confirmation-message');
+  const formMessage = document.getElementById('formMessage');
 
-  if (form && confirmation) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+if (form && formMessage) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      const data = new FormData(form);
+    const data = new FormData(form);
 
-      fetch('https://formsubmit.co/ajax/raphaelhaddad77@icloud.com', {
-        method: 'POST',
-        body: data,
-      })
-      .then(response => {
-        if (response.ok) {
-          confirmation.style.display = 'block';
-          confirmation.textContent = '✅ Message envoyé avec succès !';
-          form.reset();
-        } else {
-          confirmation.style.display = 'block';
-          confirmation.style.color = 'red';
-          confirmation.textContent = '❌ Erreur lors de l’envoi.';
-        }
-      })
-      .catch(() => {
-        confirmation.style.display = 'block';
-        confirmation.style.color = 'red';
-        confirmation.textContent = '❌ Problème de réseau.';
-      });
+    fetch('https://formsubmit.co/ajax/raphaelhaddad77@icloud.com', {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => {
+      if (response.ok) {
+        formMessage.style.display = 'block';
+        formMessage.textContent = '✅ Message envoyé avec succès !';
+        form.reset();
+      } else {
+        formMessage.style.display = 'block';
+        formMessage.style.color = 'red';
+        formMessage.textContent = '❌ Erreur lors de l’envoi.';
+      }
+    })
+    .catch(() => {
+      formMessage.style.display = 'block';
+      formMessage.style.color = 'red';
+      formMessage.textContent = '❌ Problème de réseau.';
     });
-  }
+  });
+}
   
   // Animation d'apparition images
 const observer = new IntersectionObserver(entries => {
