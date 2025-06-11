@@ -5,15 +5,38 @@ window.addEventListener("DOMContentLoaded", () => {
     speechSynthesis.speak(msg);
   });
   
-  // Formulaire contact simple
+  // Formulaire contact AJAX + confirmation
   const form = document.getElementById('contact-form');
-  const formMessage = document.getElementById('form-message');
-  
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formMessage.textContent = "Merci, ton message a bien été reçu ! 🚀";
-    form.reset();
-  });
+  const confirmation = document.getElementById('confirmation-message');
+
+  if (form && confirmation) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      fetch('https://formsubmit.co/ajax/raphaelhaddad77@icloud.com', {
+        method: 'POST',
+        body: data,
+      })
+      .then(response => {
+        if (response.ok) {
+          confirmation.style.display = 'block';
+          confirmation.textContent = '✅ Message envoyé avec succès !';
+          form.reset();
+        } else {
+          confirmation.style.display = 'block';
+          confirmation.style.color = 'red';
+          confirmation.textContent = '❌ Erreur lors de l’envoi.';
+        }
+      })
+      .catch(() => {
+        confirmation.style.display = 'block';
+        confirmation.style.color = 'red';
+        confirmation.textContent = '❌ Problème de réseau.';
+      });
+    });
+  }
   
   // Animation d'apparition images
 const observer = new IntersectionObserver(entries => {
