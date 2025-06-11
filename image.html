@@ -1,0 +1,51 @@
+dessin1.png
+dessin2.png
+boxe1.jpg
+moto1.jpg
+voiture1.jpg
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemple d’images de Rapido</title>
+  <style>
+    body {
+      background: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .gallery img {
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00acee;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Galerie d’images de Rapido</h1>
+  <div class="gallery">
+    <img src="dessin1.png" alt="Dessin 1" />
+    <img src="dessin2.png" alt="Dessin 2" />
+    <img src="boxe1.jpg" alt="Boxe Rapido" />
+    <img src="moto1.jpg" alt="Moto Rapido" />
+    <img src="voiture1.jpg" alt="Voiture Rapido" />
+  </div>
+</body>
+</html>

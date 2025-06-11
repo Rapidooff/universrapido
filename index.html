@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UniversRapido - Mon Univers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <header class="hero">
+    <h1>Bienvenue dans l’univers de Rapido</h1>
+    <p>Code, création, puissance. Explore mon monde.</p>
+    <a href="#informatique" class="btn">Commencer</a>
+  </header>
+
+  <main>
+    <section id="informatique">
+      <h2>Informatique & Codage</h2>
+      <p>Je développe des projets connectés à l'IA, alliant innovation et utilité.</p>
+      <div class="project">
+        <h3>Aurion.IA</h3>
+        <p>Assistant vocal intelligent avec IA locale (LLaMA), reconnaissance vocale, et connexion à ChatGPT.</p>
+      </div>
+      <div class="project">
+        <h3>FamiliPic</h3>
+        <p>Application mobile pour partager et organiser des souvenirs photo en famille.</p>
+      </div>
+      <p>Technos : SwiftUI, Xcode, Firebase, OpenAI, Speech Recognition</p>
+    </section>
+
+    <section id="dessin">
+      <h2>Dessin & Webtoon</h2>
+      <p>Je travaille sur un webtoon racontant l’histoire de Simon, un boxeur argentin arrivé à Paris.</p>
+      <div class="slider">
+        <img src="image/dessin1.png" alt="Simon & Mellisa" />
+        <img src="image/dessin2.png" alt="les debut de Simon" />
+        <img src="image/dessin3.png" alt="Simon a la rage de vincre" />
+      </div>
+    </section>
+
+    <section id="boxe">
+      <h2>Boxe</h2>
+      <p>Je pratique la boxe depuis 3 ans. Ce sport m’a appris la discipline, le mental et la persévérance.</p>
+      <blockquote>“Chaque coup porté est un pas de plus vers ma version la plus forte.”</blockquote>
+      <img src="image/boxe1.JPG" alt="Rapido en boxe" style="width:300px;border-radius:10px;margin-top:10px;" />
+    </section>
+
+    <section id="anime">
+      <h2>Animés & Mangas</h2>
+      <p>Les animés et mangas m’inspirent par leur énergie visuelle et mentale.</p>
+      <ul>
+        <li><strong>Solo Leveling</strong> – Puissance & transformation</li>
+        <li><strong>Naruto</strong> – Aventure & croissance personnelle</li>
+        <li><strong>Wind Breaker</strong> – Combat & détermination</li>
+      </ul>
+    </section>
+
+
+
+<section id="films-series">
+  <h2>Films & Séries</h2>
+  <p>Mes films et séries préférés qui m’inspirent au quotidien.</p>
+  <ul>
+    <li><strong>The Rookie</strong> – Action policière et aventure</li>
+    <li><strong>Outer Banks</strong> – Aventure et suspense</li>
+    <li><strong>Teen Wolf</strong> – Action, amitié, mystere</li>
+</div>
+</section>
+    
+    <section id="moto-voiture">
+      <h2>Moto & Voitures</h2>
+      <p>Je suis passionné par les motos et les voitures, surtout pour le design, la sensation de liberté et l’adrénaline.</p>
+      <div class="gallery">
+        <img src="image/moto1.jpg" alt="Moto Yamaha" />
+        <img src="image/vouture1.jpg" alt="Voiture BMW M4" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & Projets futurs</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Ton nom" required />
+        <input type="email" placeholder="Ton email" required />
+        <textarea placeholder="Ton message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+      <p id="form-message"></p>
+
+      <div class="futur">
+        <h3>Ce que je prépare :</h3>
+        <ul>
+          <li>🔜 Nouvelle version d’Aurion en offline</li>
+          <li>🎨 Lancement de mon Webtoon complet</li>
+          <li>📦 Application de suivi sportif pour boxeurs</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Rapido. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('section', {
+      delay: 200,
+      distance: '50px',
+      origin: 'bottom',
+      duration: 800,
+      easing: 'ease-in-out',
+      reset: false
+    });
+  </script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("tsparticles", {
+      background: {
+        color: "#141e30"
+      },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 60 },
+        color: { value: "#00acee" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          outModes: "bounce"
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          }
+        },
+        modes: {
+          repulse: {
+            distance: 100
+          }
+        }
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+</html>
